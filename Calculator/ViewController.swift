@@ -22,6 +22,11 @@ class ViewController: UIViewController {
     
     var memory : Double = 0
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        historyDisplay!.text = ""
+    }
+    
     @IBAction func MC(_ sender: UIButton) {
         memory = 0
     }
