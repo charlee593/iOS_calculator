@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        historyDisplay!.text = ""
+//        historyDisplay!.text = ""
     }
     
     @IBAction func MC(_ sender: UIButton) {
@@ -109,8 +109,7 @@ class ViewController: UIViewController {
     private var brain: CalculatorBrain = CalculatorBrain()
     
     @IBAction func performOperation(_ sender: UIButton) {
-        displayStack =  displayStack + sender.currentTitle!
-        historyDisplay.text = displayStack
+        historyDisplay.text = historyDisplay.text! + sender.currentTitle!
         
         if userIsInTheMiddleOfTyping {
             brain.setOperand(displayValue)
