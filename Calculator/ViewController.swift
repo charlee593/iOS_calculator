@@ -63,8 +63,8 @@ class ViewController: UIViewController {
         
         let digit = sender.currentTitle!
         
-        displayStack =  displayStack + digit
-        historyDisplay.text = displayStack
+        
+        historyDisplay.text = historyDisplay.text! + digit
         
         if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = display.text!
