@@ -62,12 +62,12 @@ class ViewController: UIViewController {
         
         if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = display.text!
-            if digit == "0" && display.text != "0" {
+            //If display has so
+            if digit == "0" && display.text == "0" {
                 return
             }
             if digit  != "." || textCurrentlyInDisplay.range(of:".") == nil {
                 display!.text = textCurrentlyInDisplay + digit
-                
             }
         }
         else {
