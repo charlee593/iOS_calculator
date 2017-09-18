@@ -37,6 +37,7 @@ class ViewController: UIViewController {
         memory = Double(display.text!)!
     }
     
+    //M+ button
     @IBAction func M(_ sender: UIButton) {
         
         memory = memory + Double(display.text!)!
@@ -47,6 +48,7 @@ class ViewController: UIViewController {
         display.text = "0"
     }
     
+    //clear stack
     @IBAction func clearStack(_ sender: Any) {
         display.text = "0"
         historyDisplay.text = ""
@@ -57,21 +59,20 @@ class ViewController: UIViewController {
         
         let digit = sender.currentTitle!
         
-        
-        historyDisplay.text = historyDisplay.text! + digit
-        
         if userIsInTheMiddleOfTyping {
             let textCurrentlyInDisplay = display.text!
-            //If display has so
+            //If display has zero and user type zero do nothing
             if digit == "0" && display.text == "0" {
                 return
             }
             if digit  != "." || textCurrentlyInDisplay.range(of:".") == nil {
                 display!.text = textCurrentlyInDisplay + digit
+                historyDisplay.text = historyDisplay.text! + digit
             }
         }
         else {
             display.text = digit
+            historyDisplay.text = historyDisplay.text! + digit
             userIsInTheMiddleOfTyping = true
         }
     }
@@ -98,7 +99,7 @@ class ViewController: UIViewController {
         
         if let mathematicalSymbol = sender.currentTitle {
             if sender.currentTitle != "="{
-                brain.performOperation("=")
+                brain.performOperation("=") //compute the result in history before the next operation
                 brain.performOperation(mathematicalSymbol)
             }
             else{
