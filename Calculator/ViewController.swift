@@ -55,8 +55,11 @@ class ViewController: UIViewController {
         brain.clearStack()
     }
     @IBAction func resultVariable(_ sender: Any) {
-        if let val =  brain.variableValues["M"]{
-            
+        if let val = brain.variableValues["M"]{
+            display.text = String(val)
+        }
+        else {
+            display.text = "0"
         }
     }
     
