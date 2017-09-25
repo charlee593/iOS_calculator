@@ -499,7 +499,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="M:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ES6-lq-d8M"/>
+                                    <action selector="resultVariableName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9e1-lG-If9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mha-gW-iyP">
