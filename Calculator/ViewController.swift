@@ -56,6 +56,7 @@ class ViewController: UIViewController {
     }
     @IBAction func resultVariableName(_ sender: Any) {
         if let val = brain.variableValues["M"]{
+            
             display.text = String(val)
         }
         else {
@@ -63,10 +64,15 @@ class ViewController: UIViewController {
             display.text = "0"
             
         }
+        brain.setOperand(displayValue)
         historyDisplay.text = historyDisplay.text! + "M"
     }
     
     @IBAction func setVariableValue(_ sender: UIButton) {
+        if brain.variableValues["M"] != nil{
+            brain.variableValues["M"] = Double(display.text!)
+        
+        }
         
     }
     
