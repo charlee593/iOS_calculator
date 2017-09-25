@@ -12,6 +12,7 @@ struct CalculatorBrain {
     
     private var accumulator: Double?
     // accumulator can either have an operand or a number...
+    var variableValues = Dictionary<String, Double>()
     
     private enum Operation {
         case constant(Double)
@@ -37,7 +38,9 @@ struct CalculatorBrain {
         "tan" : Operation.unaryOperation(tan),
         "=" : Operation.equals
     ]
-    
+    mutating func setOperand(variableName: String){
+        variableValues[variableName] = 0.0
+    }
     mutating func performOperation(_ symbol: String) {
         if let operation = operations[symbol] {
             switch operation {
