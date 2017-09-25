@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -487,6 +487,38 @@
                                     <action selector="clearStack:" destination="BYZ-38-t0r" eventType="touchDownRepeat" id="CaT-Mm-uIg"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vy-Z1-u3v">
+                                <rect key="frame" x="19" y="495" width="50" height="41"/>
+                                <color key="backgroundColor" red="0.0" green="0.0077374170559999997" blue="0.83502671630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="3Vy-Z1-u3v" secondAttribute="height" multiplier="50:41" id="dlJ-uU-8UZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="M">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="M:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ES6-lq-d8M"/>
+                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g4T-LD-eod"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mha-gW-iyP">
+                                <rect key="frame" x="76" y="495" width="50" height="41"/>
+                                <color key="backgroundColor" red="0.0" green="0.0077374170559999997" blue="0.83502671630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mha-gW-iyP" secondAttribute="height" multiplier="50:41" id="rFF-LU-TPS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="-&gt;M">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setVariable:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UEh-VO-uAc"/>
+                                    <action selector="touchDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vgU-i6-WsO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -503,6 +535,7 @@
                             <constraint firstItem="jpM-RS-PRM" firstAttribute="top" secondItem="VP9-1I-Mnk" secondAttribute="bottom" constant="8" id="6nr-SQ-iFy"/>
                             <constraint firstItem="z3H-0T-og5" firstAttribute="height" secondItem="iTU-0M-v39" secondAttribute="height" id="8WJ-CZ-aZz"/>
                             <constraint firstItem="ekS-r3-Ell" firstAttribute="leading" secondItem="lwG-dR-K3z" secondAttribute="trailing" constant="8" id="9md-C5-sBX"/>
+                            <constraint firstItem="mha-gW-iyP" firstAttribute="width" secondItem="mha-gW-iyP" secondAttribute="height" multiplier="50:41" id="9uU-J3-zXM"/>
                             <constraint firstItem="VP9-1I-Mnk" firstAttribute="width" secondItem="iTU-0M-v39" secondAttribute="width" id="AZg-iK-PC9"/>
                             <constraint firstItem="GNB-jB-pVw" firstAttribute="top" secondItem="ekS-r3-Ell" secondAttribute="bottom" constant="8" id="BuS-59-QNJ"/>
                             <constraint firstItem="vhT-PD-V9C" firstAttribute="width" secondItem="iTU-0M-v39" secondAttribute="width" id="CBB-Ol-hnr"/>
@@ -521,6 +554,7 @@
                             <constraint firstItem="ekS-r3-Ell" firstAttribute="height" secondItem="iTU-0M-v39" secondAttribute="height" id="IEH-qq-RDU"/>
                             <constraint firstItem="Tde-lj-eL6" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="IPV-uM-sDm"/>
                             <constraint firstItem="wIS-Gp-PUo" firstAttribute="width" secondItem="iTU-0M-v39" secondAttribute="width" id="It7-ca-oW9"/>
+                            <constraint firstItem="3Vy-Z1-u3v" firstAttribute="width" secondItem="3Vy-Z1-u3v" secondAttribute="height" multiplier="50:41" id="J2g-If-tTr"/>
                             <constraint firstItem="6f2-gP-x0u" firstAttribute="top" secondItem="vhT-PD-V9C" secondAttribute="bottom" constant="8" id="JRd-Xf-KYO"/>
                             <constraint firstItem="ekS-r3-Ell" firstAttribute="width" secondItem="iTU-0M-v39" secondAttribute="width" id="JtU-SA-8k7"/>
                             <constraint firstItem="9KA-kR-acy" firstAttribute="width" secondItem="iTU-0M-v39" secondAttribute="width" id="KZg-4t-bc8"/>
@@ -529,6 +563,7 @@
                             <constraint firstItem="8LF-dF-oII" firstAttribute="height" secondItem="iTU-0M-v39" secondAttribute="height" id="LGP-tp-h10"/>
                             <constraint firstItem="y2Y-0y-cWt" firstAttribute="leading" secondItem="wIS-Gp-PUo" secondAttribute="trailing" constant="8" id="LHA-0m-n51"/>
                             <constraint firstItem="1ta-Bv-ut0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LzH-7N-BqF"/>
+                            <constraint firstItem="mha-gW-iyP" firstAttribute="width" secondItem="mha-gW-iyP" secondAttribute="height" multiplier="50:41" id="MPZ-uh-gsU"/>
                             <constraint firstItem="6pd-kx-dBc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="3" id="Mjh-mO-QCW"/>
                             <constraint firstItem="KDw-bQ-maj" firstAttribute="height" secondItem="iTU-0M-v39" secondAttribute="height" id="NL8-N6-PLO"/>
                             <constraint firstItem="Ovk-qo-IiQ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Nyw-df-a8t"/>

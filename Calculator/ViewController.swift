@@ -54,6 +54,14 @@ class ViewController: UIViewController {
         historyDisplay.text = ""
         brain.clearStack()
     }
+    @IBAction func resultVariable(_ sender: Any) {
+        if let val =  brain.variableValues["M"]{
+            
+        }
+    }
+    
+    @IBAction func setVariable(_ sender: UIButton) {
+    }
     
     @IBAction func touchDigit(_ sender: UIButton) {
         
