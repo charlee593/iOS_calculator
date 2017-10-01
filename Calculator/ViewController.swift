@@ -54,25 +54,30 @@ class ViewController: UIViewController {
         historyDisplay.text = ""
         brain.clearStack()
     }
-    @IBAction func resultVariableName(_ sender: Any) {
-        if let val = brain.variableValues["M"]{
+    @IBAction func resultVariableName(_ sender: UIButton) {
+        if let val = brain.variableValues["->"+sender.currentTitle!]{
             
             display.text = String(val)
         }
         else {
-            brain.setOperand(variableName: "M")
+            brain.setOperand(variableName: "->"+sender.currentTitle!)
             display.text = "0"
             
         }
         brain.setOperand(displayValue)
-        historyDisplay.text = historyDisplay.text! + "M"
+        historyDisplay.text = historyDisplay.text! + sender.currentTitle!
     }
     
     @IBAction func setVariableValue(_ sender: UIButton) {
-        if brain.variableValues["M"] != nil{
-            brain.variableValues["M"] = Double(display.text!)
-        
+        if brain.variableValues[sender.currentTitle!] != nil{
+            brain.variableValues[sender.currentTitle!] = Double(display.text!)
         }
+        else {
+                brain.setOperand(variableName: "->"+sender.currentTitle!)
+                brain.variableValues[sender.currentTitle!] = Double(display.text!)
+        }
+        
+        
         
     }
     
