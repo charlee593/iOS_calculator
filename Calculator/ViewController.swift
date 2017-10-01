@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var display: UILabel!
     @IBOutlet weak var historyDisplay: UILabel!
     
+    
+    
     var userIsInTheMiddleOfTyping = false
     var memory : Double = 0
     
@@ -47,6 +49,20 @@ class ViewController: UIViewController {
     @IBAction func clear(_ sender: Any) {
         display.text = "0"
     }
+    
+    @IBAction func Undo(_ sender: UIButton) {
+        if display.text?.count == 1 {
+            
+        }
+        else {
+            
+            display.text =  String(display.text!.characters.dropLast())
+            
+        }
+    }
+    
+    
+    
     
     //clear stack
     @IBAction func clearStack(_ sender: Any) {
@@ -83,6 +99,7 @@ class ViewController: UIViewController {
     
     @IBAction func touchDigit(_ sender: UIButton) {
         
+        
         let digit = sender.currentTitle!
         
         if userIsInTheMiddleOfTyping {
@@ -91,7 +108,11 @@ class ViewController: UIViewController {
             if digit == "0" && display.text == "0" {
                 return
             }
-            if digit  != "." || textCurrentlyInDisplay.range(of:".") == nil {
+            else if Double(textCurrentlyInDisplay) == 0{
+                display!.text = digit
+                historyDisplay.text = historyDisplay.text! + digit
+            }
+            else if digit  != "." || textCurrentlyInDisplay.range(of:".") == nil {
                 display!.text = textCurrentlyInDisplay + digit
                 historyDisplay.text = historyDisplay.text! + digit
             }
