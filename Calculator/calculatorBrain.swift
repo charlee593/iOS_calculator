@@ -95,6 +95,7 @@ struct CalculatorBrain {
     mutating func clearStack() {
         accumulator = nil
         pendingBinaryOperation = nil
+        historyStackAndValue = []
         
     }
     
@@ -104,4 +105,19 @@ struct CalculatorBrain {
             return accumulator
         }
     }
+    
+    mutating func stackPush (historyDisplay : String, display: String){
+        var dic = ["history": historyDisplay]
+        dic["display"] = display
+        historyStackAndValue.append(dic)
+    }
+    mutating func stackPop() -> Dictionary<String, String> {
+        if !historyStackAndValue.isEmpty{
+        return historyStackAndValue.popLast()!
+        }
+       return [:]
+    }
+    
+    
 }
+

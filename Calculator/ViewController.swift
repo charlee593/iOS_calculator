@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
     @IBOutlet weak var historyDisplay: UILabel!
-    
+    var justPop = false
     
     
     var userIsInTheMiddleOfTyping = false
@@ -51,11 +51,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func Undo(_ sender: UIButton) {
-        if display.text?.count == 1 {
+        if display.text?.count == 1 || justPop {
             
+            let dic = brain.stackPop()
+            if (dic["history"] != nil) {
+                historyDisplay.text = dic["history"]
+                display.text = dic["display"]
+            
+                justPop = true
+            }
+            else {
+                historyDisplay.text = ""
+                display.text = "0"
+            }
         }
         else {
-            
+            historyDisplay.text =  String(historyDisplay.text!.characters.dropLast())
             display.text =  String(display.text!.characters.dropLast())
             
         }
@@ -98,7 +109,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func touchDigit(_ sender: UIButton) {
-        
+        justPop = false
         
         let digit = sender.currentTitle!
         
@@ -137,6 +148,8 @@ class ViewController: UIViewController {
     private var brain: CalculatorBrain = CalculatorBrain()
     
     @IBAction func performOperation(_ sender: UIButton) {
+        brain.stackPush(historyDisplay: historyDisplay.text!, display: display.text!)
+        justPop = true
         historyDisplay.text = historyDisplay.text! + sender.currentTitle!
         
         if userIsInTheMiddleOfTyping {
@@ -145,6 +158,7 @@ class ViewController: UIViewController {
         }
         
         if let mathematicalSymbol = sender.currentTitle {
+            
             if sender.currentTitle != "="{
                 brain.performOperation("=") //compute the result in history before the next operation
                 brain.performOperation(mathematicalSymbol)
