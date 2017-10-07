@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8406A16C1F88D7DF00D6E557 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8406A16B1F88D7DF00D6E557 /* GraphViewController.swift */; };
 		8464EE281F68F4EE00CBDDE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464EE271F68F4EE00CBDDE1 /* AppDelegate.swift */; };
 		8464EE2D1F68F4EE00CBDDE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8464EE2B1F68F4EE00CBDDE1 /* Main.storyboard */; };
 		8464EE2F1F68F4EE00CBDDE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8464EE2E1F68F4EE00CBDDE1 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8406A16B1F88D7DF00D6E557 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		8464EE241F68F4EE00CBDDE1 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8464EE271F68F4EE00CBDDE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8464EE2C1F68F4EE00CBDDE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				8464EE3F1F69414700CBDDE1 /* CalculatorViewController.swift */,
 				8464EE3D1F69412000CBDDE1 /* calculatorBrain.swift */,
 				8464EE2B1F68F4EE00CBDDE1 /* Main.storyboard */,
+				8406A16B1F88D7DF00D6E557 /* GraphViewController.swift */,
 				8464EE2E1F68F4EE00CBDDE1 /* Assets.xcassets */,
 				8464EE301F68F4EE00CBDDE1 /* LaunchScreen.storyboard */,
 				8464EE331F68F4EE00CBDDE1 /* Info.plist */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8464EE401F69414700CBDDE1 /* CalculatorViewController.swift in Sources */,
+				8406A16C1F88D7DF00D6E557 /* GraphViewController.swift in Sources */,
 				8464EE3E1F69412000CBDDE1 /* calculatorBrain.swift in Sources */,
 				8464EE281F68F4EE00CBDDE1 /* AppDelegate.swift in Sources */,
 			);
@@ -217,6 +221,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				NEW_SETTING = "";
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -268,6 +273,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				NEW_SETTING = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
