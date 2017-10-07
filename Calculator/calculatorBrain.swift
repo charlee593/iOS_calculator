@@ -11,7 +11,7 @@ import Foundation
 struct CalculatorBrain {
     
     var historyStackAndValue: [Dictionary<String,String>] = []
-    private var accumulator: Double?
+     var accumulator: Double?
     // accumulator can either have an operand or a number...
     var variableValues = Dictionary<String, Double>()
     

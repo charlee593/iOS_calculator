@@ -8,7 +8,15 @@
 
 import UIKit
 
-class GraphViewController: UIViewController {
+class GraphViewController: UIViewController , GraphViewProtocol{
+    internal func calculateY(sender: Graph, x: CGFloat) -> CGFloat? {
+        brain.accumulator = Double(x)
+        brain.performOperation("cos")
+        return CGFloat(brain.result!)
+    }
+    
+    
+    private var brain = CalculatorBrain()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +29,13 @@ class GraphViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBOutlet weak var VariableGraphView: Graph!{
+        didSet{
+            VariableGraphView.functionGraph = self
+            
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

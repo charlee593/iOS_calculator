@@ -810,6 +810,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="cJl-HM-Ygf"/>
+                    <connections>
+                        <outlet property="VariableGraphView" destination="FxA-xj-O5P" id="bn7-KD-yoW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kas-fr-ryI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

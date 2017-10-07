@@ -178,4 +178,16 @@ class CalculatorViewController: UIViewController {
             displayValue = result
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var destination = segue.destination
+        if let navagationController = destination as? UINavigationController{
+            destination = navagationController.visibleViewController ?? destination
+        }
+        if segue.identifier == "Graph Segue" {
+            if let graphViewController = destination as? GraphViewController{
+                print("laksjdf;ljasd;flja;slkdfj;lsadkf;lasdjf;")
+            }
+        }
+    }
 }
