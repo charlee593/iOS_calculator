@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  CalculatorViewController.swift
 //  Calculator
 //
 //  Created by Admin on 9/13/17.
@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
     
     
     @IBOutlet weak var display: UILabel!
@@ -49,6 +49,9 @@ class ViewController: UIViewController {
     @IBAction func clear(_ sender: Any) {
         display.text = "0"
     }
+    
+    
+    
     
     @IBAction func Undo(_ sender: UIButton) {
         if display.text?.count == 1 || justPop {
