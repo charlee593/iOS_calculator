@@ -153,13 +153,18 @@ class CalculatorViewController: UIViewController {
     @IBAction func performOperation(_ sender: UIButton) {
         brain.stackPush(historyDisplay: historyDisplay.text!, display: display.text!)
         justPop = true
-        historyDisplay.text = historyDisplay.text! + sender.currentTitle!
-        
+        if sender.currentTitle ==  "sin" || sender.currentTitle == "cos" || sender.currentTitle == "tan"{
+            historyDisplay.text =  sender.currentTitle! + "("+historyDisplay.text!+")"
+        }
+        else{
+            historyDisplay.text = historyDisplay.text! + sender.currentTitle!
+        }
         if userIsInTheMiddleOfTyping {
             brain.setOperand(displayValue)
             userIsInTheMiddleOfTyping = false
         }
         
+        var mathsymbol : String?
         if let mathematicalSymbol = sender.currentTitle {
             
             if sender.currentTitle != "="{
@@ -168,7 +173,9 @@ class CalculatorViewController: UIViewController {
             }
             else{
                 brain.performOperation(mathematicalSymbol)
+                mathsymbol = mathematicalSymbol
             }
+            
         }
         
         if let result = brain.result {
@@ -186,7 +193,11 @@ class CalculatorViewController: UIViewController {
         }
         if segue.identifier == "Graph Segue" {
             if let graphViewController = destination as? GraphViewController{
-                print("laksjdf;ljasd;flja;slkdfj;lsadkf;lasdjf;")
+                graphViewController.history = brain.historyStackAndValue
+                //print(brain.variableValues)
+                graphViewController.acumulatorGraph = brain.accumulator ?? 0
+                //graphViewController.operatorGraph = mathSymbol
+                
             }
         }
     }

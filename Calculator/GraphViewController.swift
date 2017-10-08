@@ -10,12 +10,19 @@ import UIKit
 
 class GraphViewController: UIViewController , GraphViewProtocol{
     internal func calculateY(sender: Graph, x: CGFloat) -> CGFloat? {
-        brain.accumulator = Double(x)
+        brain.accumulator = Double(acumulatorGraph)
+
         brain.performOperation("cos")
+        
+        
         return CGFloat(brain.result!)
     }
     
-    
+    var history : [Dictionary<String,String>]?
+    var acumulatorGraph : Double = 0
+    var operatorGraph : String?
+    var valueX : Double = 0
+   // valueX = Double(history.last)
     private var brain = CalculatorBrain()
 
     override func viewDidLoad() {

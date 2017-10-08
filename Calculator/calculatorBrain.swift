@@ -40,7 +40,7 @@ struct CalculatorBrain {
         "=" : Operation.equals
     ]
     mutating func setOperand(variableName: String){
-        variableValues[variableName] = 0.0
+        variableValues[variableName] = nil
     }
     mutating func performOperation(_ symbol: String) {
         if let operation = operations[symbol] {

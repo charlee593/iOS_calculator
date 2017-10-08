@@ -802,7 +802,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FxA-xj-O5P" customClass="Graph" customModule="Calculator" customModuleProvider="target">
-                                <rect key="frame" x="20" y="72" width="374" height="656"/>
+                                <rect key="frame" x="20" y="80" width="374" height="656"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -839,8 +839,8 @@
             <objects>
                 <splitViewController id="FPc-NX-LVF" sceneMemberID="viewController">
                     <connections>
-                        <segue destination="oCK-b0-iFx" kind="relationship" relationship="masterViewController" id="H00-aF-6ZQ"/>
-                        <segue destination="JsR-VI-vNh" kind="relationship" relationship="detailViewController" id="ql3-eh-TGF"/>
+                        <segue destination="oCK-b0-iFx" kind="relationship" relationship="detailViewController" id="4Q9-dO-7Dy"/>
+                        <segue destination="JsR-VI-vNh" kind="relationship" relationship="masterViewController" id="PaH-FB-G9Y"/>
                     </connections>
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fkb-tW-q6v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -865,6 +865,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Wgs-0O-gy4"/>
+        <segue reference="PaH-FB-G9Y"/>
     </inferredMetricsTieBreakers>
 </document>
