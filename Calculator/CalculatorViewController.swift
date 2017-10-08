@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+	 
 class CalculatorViewController: UIViewController {
     
     
@@ -21,6 +21,7 @@ class CalculatorViewController: UIViewController {
     var memory : Double = 0
     
     override func viewDidLoad() {
+        self.navigationItem.setHidesBackButton(true, animated:true)
         super.viewDidLoad()
         historyDisplay.text = ""
     }
@@ -150,11 +151,13 @@ class CalculatorViewController: UIViewController {
     
     private var brain: CalculatorBrain = CalculatorBrain()
     
+     var mathsymbol : String?
     @IBAction func performOperation(_ sender: UIButton) {
         brain.stackPush(historyDisplay: historyDisplay.text!, display: display.text!)
         justPop = true
         if sender.currentTitle ==  "sin" || sender.currentTitle == "cos" || sender.currentTitle == "tan"{
             historyDisplay.text =  sender.currentTitle! + "("+historyDisplay.text!+")"
+            mathsymbol = sender.currentTitle
         }
         else{
             historyDisplay.text = historyDisplay.text! + sender.currentTitle!
@@ -164,7 +167,7 @@ class CalculatorViewController: UIViewController {
             userIsInTheMiddleOfTyping = false
         }
         
-        var mathsymbol : String?
+       
         if let mathematicalSymbol = sender.currentTitle {
             
             if sender.currentTitle != "="{
@@ -173,8 +176,9 @@ class CalculatorViewController: UIViewController {
             }
             else{
                 brain.performOperation(mathematicalSymbol)
-                mathsymbol = mathematicalSymbol
+                
             }
+            
             
         }
         
@@ -192,10 +196,14 @@ class CalculatorViewController: UIViewController {
             destination = navagationController.visibleViewController ?? destination
         }
         if segue.identifier == "Graph Segue" {
+            brain.performOperation("=")
             if let graphViewController = destination as? GraphViewController{
                 graphViewController.history = brain.historyStackAndValue
                 //print(brain.variableValues)
+                graphViewController.operatorGraph = mathsymbol
+                
                 graphViewController.acumulatorGraph = brain.accumulator ?? 0
+                
                 //graphViewController.operatorGraph = mathSymbol
                 
             }

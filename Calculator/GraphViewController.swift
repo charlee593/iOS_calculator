@@ -10,11 +10,22 @@ import UIKit
 
 class GraphViewController: UIViewController , GraphViewProtocol{
     internal func calculateY(sender: Graph, x: CGFloat) -> CGFloat? {
-        brain.accumulator = Double(acumulatorGraph)
+        
+        
+        
+if operatorGraph ==  "sin" || operatorGraph == "cos" || operatorGraph == "tan"{
+    
+    brain.accumulator = Double(x)
+ brain.performOperation(operatorGraph!)
+    brain.performOperation("=")
+    
+        }
+else{
+    //print (acumulatorGraph)
+        brain.performOperation("=")
+      brain.accumulator = acumulatorGraph
 
-        brain.performOperation("cos")
-        
-        
+        }
         return CGFloat(brain.result!)
     }
     
